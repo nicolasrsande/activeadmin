@@ -35,7 +35,7 @@ group :test do
   gem 'jasmine'
   gem 'jasmine-core', '2.99.2' # last release with Ruby 2.2 support.
   gem 'launchy'
-  gem 'parallel_tests', '~> 2.26'
+  gem 'parallel_tests', github: 'deivid-rodriguez/parallel_tests', branch: 'cucumber_4_support'
   gem 'rails-i18n' # Provides default i18n for many languages
   gem 'rspec-rails'
   gem 'rspec', github: 'rspec/rspec', ref: '3e6c0fb9c9ec68eddd409cfe7b3eb077b390b302'
