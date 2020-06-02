@@ -20,6 +20,14 @@ GIT
       rails (>= 4.2, < 7)
 
 GIT
+  remote: https://github.com/deivid-rodriguez/formtastic.git
+  revision: 0109c66329da7fb7bf7cdc23c6d59dceefeb13ee
+  ref: 0109c66329da7fb7bf7cdc23c6d59dceefeb13ee
+  specs:
+    formtastic (3.2.0.pre)
+      actionpack (>= 5.2.0)
+
+GIT
   remote: https://github.com/heartcombo/devise.git
   revision: 70f3ae24e00906814b63fe1998c861ca45fbecf6
   ref: 70f3ae24e00906814b63fe1998c861ca45fbecf6
@@ -30,13 +38,6 @@ GIT
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-
-GIT
-  remote: https://github.com/justinfrench/formtastic.git
-  revision: 2d9685a81795f76e971c151b0271ff8a54b8d399
-  specs:
-    formtastic (3.2.0.pre)
-      actionpack (>= 5.2.0)
 
 GIT
   remote: https://github.com/rails/rails.git
