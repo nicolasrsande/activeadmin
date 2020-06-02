@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 70f3ae24e00906814b63fe1998c861ca45fbecf6
-  ref: 70f3ae24e00906814b63fe1998c861ca45fbecf6
+  revision: a451b98cf2311b6bb73b3762083294db131a4603
+  ref: a451b98cf2311b6bb73b3762083294db131a4603
   specs:
     devise (4.7.1)
       bcrypt (~> 3.0)
