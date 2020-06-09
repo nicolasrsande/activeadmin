@@ -66,7 +66,7 @@ module ActiveAdmin
         add_action_item :new, only: :index do
           if controller.action_methods.include?('new') && authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
-            link_to localizer.t(:new_model), new_resource_path
+            link_to '<i class="fas fa-plus"></i>'.html_safe + localizer.t(:new_model), new_resource_path
           end
         end
       end
