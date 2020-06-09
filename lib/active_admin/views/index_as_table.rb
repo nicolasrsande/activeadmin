@@ -374,13 +374,13 @@ module ActiveAdmin
         def defaults(resource, options = {})
           localizer = ActiveAdmin::Localizers.resource(active_admin_config)
           if controller.action_methods.include?('show') && authorized?(ActiveAdmin::Auth::READ, resource)
-            item localizer.t(:view), resource_path(resource), class: "view_link #{options[:css_class]}", title: localizer.t(:view)
+            item '<i class="fas fa-eye"></i> '.html_safe + localizer.t(:view), resource_path(resource), class: "view_link #{options[:css_class]}", title: localizer.t(:view)
           end
           if controller.action_methods.include?('edit') && authorized?(ActiveAdmin::Auth::UPDATE, resource)
-            item localizer.t(:edit), edit_resource_path(resource), class: "edit_link #{options[:css_class]}", title: localizer.t(:edit)
+            item '<i class="fas fa-edit"></i> '.html_safe + localizer.t(:edit), edit_resource_path(resource), class: "edit_link #{options[:css_class]}", title: localizer.t(:edit)
           end
           if controller.action_methods.include?('destroy') && authorized?(ActiveAdmin::Auth::DESTROY, resource)
-            item localizer.t(:delete), resource_path(resource), class: "delete_link #{options[:css_class]}", title: localizer.t(:delete),
+            item '<i class="fas fa-trash"></i> '.html_safe + localizer.t(:delete), resource_path(resource), class: "delete_link #{options[:css_class]}", title: localizer.t(:delete),
                                                                 method: :delete, data: { confirm: localizer.t(:delete_confirmation) }
           end
         end
