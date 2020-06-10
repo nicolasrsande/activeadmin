@@ -79,7 +79,6 @@ module ActiveAdmin
 
       def commit_action_with_cancel_link
         add_create_another_checkbox
-        #action(:submit)
         add_submit_button
         cancel_link
       end
@@ -119,7 +118,7 @@ module ActiveAdmin
       private
 
       def submit_button
-        id = @resource.class.model_name.human + '_submit_action'
+        id = @resource.class.model_name + '_submit_action'
         Arbre::Context.new do
           li class: 'action input_action', id: id do
             button(
