@@ -84,8 +84,10 @@ module ActiveAdmin
         cancel_link
       end
 
-      def add_submit_button
-        template.button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit)
+      def add_submit_button(html_options = {}, li_attrs = {})
+        li_attrs[:class] ||= "action input_action"
+        li_content = template.button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit)
+        template.content_tag(:li, li_content, li_attrs)
       end
 
       def cancel_link(url = { action: "index" }, html_options = {}, li_attrs = {})
