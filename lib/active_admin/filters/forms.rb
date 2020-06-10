@@ -65,7 +65,7 @@ module ActiveAdmin
           end
 
           buttons = content_tag :div, class: "buttons" do
-            f.submit("<i class='fas fa-filter'></i> ".html_safe + I18n.t('active_admin.filters.buttons.filter')) +
+            f.submit('<i class="fas fa-filter"></i> '.html_safe + I18n.t('active_admin.filters.buttons.filter')) +
               link_to("<i class='fas fa-redo'></i> ".html_safe + I18n.t('active_admin.filters.buttons.clear'), '#', class: 'clear_filters_btn') +
               hidden_field_tags_for(params, except: except_hidden_fields)
           end
