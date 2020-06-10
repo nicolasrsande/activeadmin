@@ -117,7 +117,7 @@ module ActiveAdmin
 
       def cancel_link(url = { action: "index" })
         Arbre::Context.new do
-          li class: 'cancel', id: id do
+          li class: 'cancel' do
             link_to(
                 "<i class='fas fa-close'></i> ".html_safe + I18n.t('active_admin.cancel'),
                 url: url,
