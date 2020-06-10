@@ -123,9 +123,9 @@ module ActiveAdmin
         Arbre::Context.new do
           li class: 'action input_action', id: id do
             button(
+                "<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'),
                 name: 'commit',
-                type: 'submit',
-                content: "<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create')
+                type: 'submit'
             )
           end
         end
