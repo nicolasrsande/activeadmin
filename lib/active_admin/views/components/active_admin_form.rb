@@ -79,21 +79,9 @@ module ActiveAdmin
 
       def commit_action_with_cancel_link
         add_create_another_checkbox
-        action(:submit)
+        #action(:submit)
+        submit_button
         cancel_link
-      end
-
-      def submit_button
-        id = @resource.class.model_name.human + '_submit_action'
-        Arbre::Context.new do
-          li class: 'action input_action', id: 'id' do
-            button(
-                value:'<i class="fas fa-save"></i> '.html_safe + I18n.t('formtastic.create'),
-                name: 'commit',
-                type: 'submit'
-            )
-          end
-        end
       end
 
       def cancel_link(url = { action: "index" }, html_options = {}, li_attrs = {})
@@ -129,6 +117,19 @@ module ActiveAdmin
       end
 
       private
+
+      def submit_button
+        id = @resource.class.model_name.human + '_submit_action'
+        Arbre::Context.new do
+          li class: 'action input_action', id: 'id' do
+            button(
+                value:'<i class="fas fa-save"></i> '.html_safe + I18n.t('formtastic.create'),
+                name: 'commit',
+                type: 'submit'
+            )
+          end
+        end
+      end
 
       def create_another_checkbox
         create_another = params[:create_another]
