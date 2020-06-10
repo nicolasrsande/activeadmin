@@ -80,7 +80,7 @@ module ActiveAdmin
       def commit_action_with_cancel_link
         add_create_another_checkbox
         #action(:submit)
-        submit_button
+        add_submit_button
         cancel_link
       end
 
@@ -121,7 +121,7 @@ module ActiveAdmin
       def submit_button
         id = @resource.class.model_name.human + '_submit_action'
         Arbre::Context.new do
-          li class: 'action input_action', id: 'id' do
+          li class: 'action input_action', id: id do
             button(
                 value:'<i class="fas fa-save"></i> '.html_safe + I18n.t('formtastic.create'),
                 name: 'commit',
