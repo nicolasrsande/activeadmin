@@ -85,7 +85,7 @@ module ActiveAdmin
 
       def cancel_link(url = { action: "index" })
         li class: 'cancel' do
-          link_to("<i class='fas fa-close'></i> ".html_safe + I18n.t('active_admin.cancel'), url)
+          link_to("<i class='fas fa-window-close'></i> ".html_safe + I18n.t('active_admin.cancel'), url)
         end
       end
 
