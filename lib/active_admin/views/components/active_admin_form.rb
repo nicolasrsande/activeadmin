@@ -79,14 +79,14 @@ module ActiveAdmin
 
       def commit_action_with_cancel_link
         add_create_another_checkbox
-        add_submit_button
+        submit_button
         #action(:submit)
         cancel_link
       end
 
-      def add_submit_button(html_options = {}, li_attrs = {})
+      def submit_button(url = { action: "create" }, html_options = {}, li_attrs = {})
         li_attrs[:class] ||= "action input_action"
-        li_content = template.button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit)
+        li_content = template.button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit), url, html_options
         template.content_tag(:li, li_content, li_attrs)
       end
 
