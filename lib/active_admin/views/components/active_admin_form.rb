@@ -79,21 +79,31 @@ module ActiveAdmin
 
       def commit_action_with_cancel_link
         add_create_another_checkbox
-        button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit)
-        #action(:submit)
+        action(:submit)
         cancel_link
       end
 
-      def submit_button(url = { action: "create" }, html_options = {}, li_attrs = {})
-        li_attrs[:class] ||= "action input_action"
-        li_content = button("<i class='fas fa-save'></i> ".html_safe + I18n.t('formtastic.create'), type: :submit), url, html_options
-        content_tag(:li, li_content, li_attrs)
+      def submit_button
+        id = @resource.class.model_name.human + '_submit_action'
+        Arbre::Context.new do
+          li class: 'action input_action', id: 'id' do
+            button(
+                value:'<i class="fas fa-save"></i> '.html_safe + I18n.t('formtastic.create'),
+                name: 'commit',
+                type: 'submit'
+            )
+          end
+        end
       end
 
       def cancel_link(url = { action: "index" }, html_options = {}, li_attrs = {})
         li_attrs[:class] ||= "cancel"
         li_content = template.link_to '<i class="fas fa-window-close"></i> '.html_safe + I18n.t('active_admin.cancel'), url, html_options
         template.content_tag(:li, li_content, li_attrs)
+      end
+
+      def add_submit_button
+        current_arbre_element.add_child(submit_button)
       end
 
       def add_create_another_checkbox
