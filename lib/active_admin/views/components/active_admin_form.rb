@@ -118,7 +118,7 @@ module ActiveAdmin
       private
 
       def submit_button
-        id = @resource.class.model_name.human + '_submit_action'
+        id = @resource.class.model_name.param_key + '_submit_action'
         Arbre::Context.new do
           li class: 'action input_action', id: id do
             button(
