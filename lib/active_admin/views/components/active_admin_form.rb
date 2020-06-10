@@ -80,11 +80,13 @@ module ActiveAdmin
       def commit_action_with_cancel_link
         add_create_another_checkbox
         add_submit_button
-        add_cancel_button
+        cancel_link
       end
 
-      def add_cancel_button
-        current_arbre_element.add_child(cancel_link)
+      def cancel_link(url = { action: "index" })
+        li class: 'cancel' do
+          link_to("<i class='fas fa-close'></i> ".html_safe + I18n.t('active_admin.cancel'), url)
+        end
       end
 
       def add_submit_button
@@ -114,12 +116,6 @@ module ActiveAdmin
       end
 
       private
-
-      def cancel_link(url = { action: "index" })
-        li class: 'cancel' do
-          link_to("<i class='fas fa-close'></i> ".html_safe + I18n.t('active_admin.cancel'), url)
-        end
-      end
 
       def submit_button
         id = @resource.class.model_name.human + '_submit_action'
