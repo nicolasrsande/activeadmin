@@ -1,3 +1,6 @@
+# About This FORK
+* FORK: THIS FORK IS NOT INTENDED FOR USE. IT HAS PRIVATE PROJECTS DEPENDENCIES.
+
 # Active Admin
 
 [Active Admin](https://activeadmin.info) is a Ruby on Rails framework for
