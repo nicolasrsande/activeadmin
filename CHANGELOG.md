@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Enhancements
+
+* Make source `ActiveAdmin.routes` provides routes in a consistent order. [#6124] by [@jiikko]
+* Allow using PORO decorators. [#6249] by [@brunvez]
+
 ### Dependency Changes
 
 * Support for ruby 2.4 has been removed. [#6198] by [@deivid-rodriguez]
@@ -524,15 +529,16 @@ Please check [0-6-stable] for previous changes.
 [#5504]: https://github.com/activeadmin/activeadmin/pull/5504
 [#5517]: https://github.com/activeadmin/activeadmin/pull/5517
 [#5537]: https://github.com/activeadmin/activeadmin/pull/5537
+[#5548]: https://github.com/activeadmin/activeadmin/pull/5548
 [#5555]: https://github.com/activeadmin/activeadmin/pull/5555
 [#5583]: https://github.com/activeadmin/activeadmin/pull/5583
+[#5590]: https://github.com/activeadmin/activeadmin/pull/5590
 [#5608]: https://github.com/activeadmin/activeadmin/pull/5608
 [#5611]: https://github.com/activeadmin/activeadmin/pull/5611
 [#5627]: https://github.com/activeadmin/activeadmin/pull/5627
 [#5631]: https://github.com/activeadmin/activeadmin/pull/5631
 [#5632]: https://github.com/activeadmin/activeadmin/pull/5632
 [#5650]: https://github.com/activeadmin/activeadmin/pull/5650
-[#5590]: https://github.com/activeadmin/activeadmin/pull/5590
 [#5662]: https://github.com/activeadmin/activeadmin/pull/5662
 [#5710]: https://github.com/activeadmin/activeadmin/pull/5710
 [#5726]: https://github.com/activeadmin/activeadmin/pull/5726
@@ -550,33 +556,34 @@ Please check [0-6-stable] for previous changes.
 [#5822]: https://github.com/activeadmin/activeadmin/pull/5822
 [#5826]: https://github.com/activeadmin/activeadmin/pull/5826
 [#5831]: https://github.com/activeadmin/activeadmin/pull/5831
-[#5548]: https://github.com/activeadmin/activeadmin/pull/5548
 [#5842]: https://github.com/activeadmin/activeadmin/pull/5842
 [#5854]: https://github.com/activeadmin/activeadmin/pull/5854
 [#5855]: https://github.com/activeadmin/activeadmin/pull/5855
+[#5867]: https://github.com/activeadmin/activeadmin/pull/5867
+[#5870]: https://github.com/activeadmin/activeadmin/pull/5870
 [#5874]: https://github.com/activeadmin/activeadmin/pull/5874
 [#5877]: https://github.com/activeadmin/activeadmin/pull/5877
 [#5886]: https://github.com/activeadmin/activeadmin/pull/5886
-[#5870]: https://github.com/activeadmin/activeadmin/pull/5870
+[#5887]: https://github.com/activeadmin/activeadmin/pull/5887
 [#5894]: https://github.com/activeadmin/activeadmin/pull/5894
 [#5895]: https://github.com/activeadmin/activeadmin/pull/5895
-[#5867]: https://github.com/activeadmin/activeadmin/pull/5867
-[#5887]: https://github.com/activeadmin/activeadmin/pull/5887
+[#5929]: https://github.com/activeadmin/activeadmin/pull/5929
 [#5931]: https://github.com/activeadmin/activeadmin/pull/5931
 [#5938]: https://github.com/activeadmin/activeadmin/pull/5938
-[#5929]: https://github.com/activeadmin/activeadmin/pull/5929
 [#5943]: https://github.com/activeadmin/activeadmin/pull/5943
 [#5946]: https://github.com/activeadmin/activeadmin/pull/5946
 [#5956]: https://github.com/activeadmin/activeadmin/pull/5956
 [#5957]: https://github.com/activeadmin/activeadmin/pull/5957
+[#5994]: https://github.com/activeadmin/activeadmin/pull/5994
 [#6000]: https://github.com/activeadmin/activeadmin/pull/6000
 [#6002]: https://github.com/activeadmin/activeadmin/pull/6002
 [#6047]: https://github.com/activeadmin/activeadmin/pull/6047
-[#5994]: https://github.com/activeadmin/activeadmin/pull/5994
-[#6149]: https://github.com/activeadmin/activeadmin/pull/6149
 [#6086]: https://github.com/activeadmin/activeadmin/pull/6086
 [#6099]: https://github.com/activeadmin/activeadmin/pull/6099
+[#6124]: https://github.com/activeadmin/activeadmin/pull/6124
+[#6149]: https://github.com/activeadmin/activeadmin/pull/6149
 [#6198]: https://github.com/activeadmin/activeadmin/pull/6198
+[#6249]: https://github.com/activeadmin/activeadmin/pull/6249
 
 [@5t111111]: https://github.com/5t111111
 [@aarek]: https://github.com/aarek
@@ -589,6 +596,7 @@ Please check [0-6-stable] for previous changes.
 [@bartoszkopinski]: https://github.com/bartoszkopinski
 [@blocknotes]: https://github.com/blocknotes
 [@bolshakov]: https://github.com/bolshakov
+[@brunvez]: https://github.com/brunvez
 [@buren]: https://github.com/buren
 [@chancancode]: https://github.com/chancancode
 [@chrp]: https://github.com/chrp
@@ -620,6 +628,7 @@ Please check [0-6-stable] for previous changes.
 [@javierjulio]: https://github.com/javierjulio
 [@jawa]: https://github.com/jawa
 [@JiiHu]: https://github.com/JiiHu
+[@jiikko]: https://github.com/jiikko
 [@johnnyshields]: https://github.com/johnnyshields
 [@jscheid]: https://github.com/jscheid
 [@juril33t]: https://github.com/juril33t

@@ -12,7 +12,7 @@ group :development, :test do
   gem 'jruby-openssl', '~> 0.10.1', platform: :jruby
 
   gem 'draper', '~> 4.0'
-  gem "devise", github: "heartcombo/devise", ref: "70f3ae24e00906814b63fe1998c861ca45fbecf6"
+  gem "devise"
 
   gem "rails", "~> 6.0.0"
   gem "activerecord-jdbcsqlite3-adapter", "~> 60.0", platform: :jruby
@@ -20,7 +20,7 @@ group :development, :test do
   gem "sprockets-rails", github: "rails/sprockets-rails", ref: "c269f5e01fdffa5c41350e855183d94ff33d318a"
   gem "sprockets", github: "rails/sprockets", ref: "2d6b1a8bde0cf870c14a2d193fa9a9be09ef99fc"
 
-  gem "formtastic", github: "justinfrench/formtastic"
+  gem "formtastic", "~> 4.0.rc1"
 end
 
 group :test do
@@ -35,9 +35,14 @@ group :test do
   gem 'jasmine'
   gem 'jasmine-core', '2.99.2' # last release with Ruby 2.2 support.
   gem 'launchy'
-  gem 'parallel_tests', '~> 2.26'
+  gem 'parallel_tests', '~> 3.0'
   gem 'rails-i18n' # Provides default i18n for many languages
   gem 'rspec-rails'
+  gem 'rspec', github: 'rspec/rspec', ref: '3e6c0fb9c9ec68eddd409cfe7b3eb077b390b302'
+  gem 'rspec-core', github: 'rspec/rspec-core', ref: '119282ec3dde5295b337322fc53301c32d0bf7ec'
+  gem 'rspec-mocks', github: 'rspec/rspec-mocks', ref: '1728885f65b25a9676c5ce54133ef8a1283e2e0d'
+  gem 'rspec-support', github: 'rspec/rspec-support', ref: '6553911974ee93855008f8ff41c26cea6652d74d'
+  gem 'rspec-expectations', github: 'rspec/rspec-expectations', ref: 'eb1787f0e1a5ec2c2650048ee60a45d4c9738d78'
   gem "sqlite3", "~> 1.4", platform: :mri
 end
 
@@ -47,7 +52,7 @@ end
 
 group :lint do
   # Code style
-  gem 'rubocop', '0.85.1'
+  gem 'rubocop', '0.88.0'
   gem 'rubocop-rspec', '~> 1.30'
   gem 'rubocop-rails', '~> 2.3'
   gem 'mdl', '0.6.0'

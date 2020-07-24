@@ -45,14 +45,17 @@ RSpec.describe ActiveAdmin::ResourceController do
         expect(controller).to receive(:call_before_create).with(resource)
         controller.send :create_resource, resource
       end
+
       it "should call the before save callback" do
         expect(controller).to receive(:call_before_save).with(resource)
         controller.send :create_resource, resource
       end
+
       it "should call the after save callback" do
         expect(controller).to receive(:call_after_save).with(resource)
         controller.send :create_resource, resource
       end
+
       it "should call the after create callback" do
         expect(controller).to receive(:call_after_create).with(resource)
         controller.send :create_resource, resource
@@ -72,14 +75,17 @@ RSpec.describe ActiveAdmin::ResourceController do
         expect(controller).to receive(:call_before_update).with(resource)
         controller.send :update_resource, resource, attributes
       end
+
       it "should call the before save callback" do
         expect(controller).to receive(:call_before_save).with(resource)
         controller.send :update_resource, resource, attributes
       end
+
       it "should call the after save callback" do
         expect(controller).to receive(:call_after_save).with(resource)
         controller.send :update_resource, resource, attributes
       end
+
       it "should call the after create callback" do
         expect(controller).to receive(:call_after_update).with(resource)
         controller.send :update_resource, resource, attributes
@@ -183,13 +189,29 @@ RSpec.describe "A specific resource controller", type: :controller do
 
     context 'with a decorator' do
       let(:config) { controller.class.active_admin_config }
-      before { config.decorator_class_name = '::PostDecorator' }
-      it 'returns a PostDecorator' do
-        expect(subject).to be_kind_of(PostDecorator)
+
+      context 'with a Draper decorator' do
+        before { config.decorator_class_name = '::PostDecorator' }
+
+        it 'returns a PostDecorator' do
+          expect(subject).to be_kind_of(PostDecorator)
+        end
+
+        it 'returns a PostDecorator that wraps the post' do
+          expect(subject.title).to eq post.title
+        end
       end
 
-      it 'returns a PostDecorator that wraps the post' do
-        expect(subject.title).to eq post.title
+      context 'with a PORO decorator' do
+        before { config.decorator_class_name = '::PostPoroDecorator' }
+
+        it 'returns a PostDecorator' do
+          expect(subject).to be_kind_of(PostPoroDecorator)
+        end
+
+        it 'returns a PostDecorator that wraps the post' do
+          expect(subject.title).to eq post.title
+        end
       end
     end
   end
@@ -277,9 +299,9 @@ RSpec.describe "A specific resource controller", type: :controller do
       end
 
       it "should raise an error" do
-        expect {
+        expect do
           controller.batch_action
-        }.to raise_error("Couldn't find batch action \"derp\"")
+        end.to raise_error("Couldn't find batch action \"derp\"")
       end
     end
 
@@ -291,9 +313,9 @@ RSpec.describe "A specific resource controller", type: :controller do
       end
 
       it "should raise an error" do
-        expect {
+        expect do
           controller.batch_action
-        }.to raise_error("Couldn't find batch action \"\"")
+        end.to raise_error("Couldn't find batch action \"\"")
       end
     end
   end

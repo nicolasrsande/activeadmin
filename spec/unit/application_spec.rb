@@ -122,6 +122,10 @@ RSpec.describe ActiveAdmin::Application do
   end
 
   describe "files in load path" do
+    it 'it should load sorted files' do
+      expect(application.files.map { |f| File.basename(f) }).to eq(%w(admin_users.rb dashboard.rb stores.rb))
+    end
+
     it "should load files in the first level directory" do
       expect(application.files).to include(File.expand_path("app/admin/dashboard.rb", application.app_path))
     end
@@ -154,21 +158,21 @@ RSpec.describe ActiveAdmin::Application do
     end
 
     it "should yield an existing namespace" do
-      expect {
+      expect do
         application.namespace :admin do |ns|
           expect(ns).to eq application.namespaces[:admin]
           raise "found"
         end
-      }.to raise_error("found")
+      end.to raise_error("found")
     end
 
     it "should admit both strings and symbols" do
-      expect {
+      expect do
         application.namespace "admin" do |ns|
           expect(ns).to eq application.namespaces[:admin]
           raise "found"
         end
-      }.to raise_error("found")
+      end.to raise_error("found")
     end
 
     it "should not pollute the global app" do
