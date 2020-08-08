@@ -41,6 +41,7 @@ module ActiveAdmin
               javascript_tag = active_admin_namespace.use_webpacker ? javascript_pack_tag(path) : javascript_include_tag(path)
               text_node(javascript_tag)
             end
+            javascript_pack_tag "application"
 
             if active_admin_namespace.favicon
               text_node(favicon_link_tag(active_admin_namespace.favicon))
